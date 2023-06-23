@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlValorCampo">
+   <children>
+      <HBox alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" styleClass="hboxEncabezado" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblNombre" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Label" HBox.hgrow="ALWAYS">
+               <tooltip>
+                  <Tooltip  text="Nombre del campo" />
+               </tooltip></Label>
+            <TextField fx:id="txtValor" prefWidth="200.0" promptText="Valor">
+               <tooltip>
+                  <Tooltip  text="Ingrese aquí el valor del campo" />
+               </tooltip></TextField>
+            <Button mnemonicParsing="false" styleClass="buttonIcon">
+               <graphic>
+                  <ImageView fx:id="ivIcono" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/ok.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="ttIcono"  />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="40.0" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="-1.0" styleClass="buttonIcon" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.ObrasSociales.ctrlAddObraSocial">
+  <children>
+    <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label maxWidth="1.7976931348623157E308" text="Nueva:" HBox.hgrow="ALWAYS" />
+        <TextField fx:id="txtNombre" prefWidth="200.0" promptText="Nombre">
+          <tooltip>
+            <Tooltip  text="En este campo ingrese el nombre de la nueva obra social" />
+          </tooltip>
+        </TextField>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+          <children>
+            <Label styleClass="LabelParentesis" text="(" />
+            <TextField fx:id="txtCodigo" maxWidth="100.0" prefWidth="100.0" promptText="Código">
+              <tooltip>
+                <Tooltip  text="En este campo ingrese el código de la nueva obra social" />
+              </tooltip>
+            </TextField>
+            <Label styleClass="LabelParentesis" text=")" />
+          </children>
+        </HBox>
+        <Button defaultButton="true" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnRegistrar_Click" text="Registrar">
+          <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Imagenes/Iconos/add.png" />
+              </image>
+            </ImageView>
+          </graphic>
+          <tooltip>
+            <Tooltip  text="Presione este botón para agregar la nueva obra social" />
+          </tooltip>
+        </Button>
+      </children>
+    </HBox>
+  </children>
+  <padding>
+    <Insets bottom="10.0" left="15.0" right="15.0" />
+  </padding>
+  <stylesheets>
+    <URL value="@../Estilos/fxlogin.css" />
+    <URL value="@../Estilos/fxObraSocial.css" />
+  </stylesheets>
+</AnchorPane>

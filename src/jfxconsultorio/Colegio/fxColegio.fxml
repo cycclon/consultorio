@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Colegio.ctrlColegio">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <Label fx:id="lblMensaje" alignment="CENTER" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label fx:id="lblUltimoPago" styleClass="LabelResaltado" text="Label" />
+            <HBox spacing="20.0">
+               <children>
+                  <VBox fx:id="vbCuenta" />
+                  <VBox spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="5.0">
+                           <children>
+                              <Label text="Ver pagos pendientes para:" />
+                              <ComboBox fx:id="cbMes" />
+                              <Label text="del" />
+                              <ComboBox fx:id="cbAno" />
+                              <Button mnemonicParsing="false" onAction="#btnVer_Click" text="Ver">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/ver.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <CheckBox fx:id="chToogle" mnemonicParsing="false" onAction="#chToogle_CheckedChanged" text="Seleccionar todo" />
+                        <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="400.0">
+                           <content>
+                              <VBox fx:id="vbPagosPendientes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                           </content>
+                        </ScrollPane>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="Fecha de pago:" />
+                              <DatePicker fx:id="dpFechaPago" />
+                              <Button mnemonicParsing="false" onAction="#btnRegistrarPago_Click" text="Registrar Pago">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/ok.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

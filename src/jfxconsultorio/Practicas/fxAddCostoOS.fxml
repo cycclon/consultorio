@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="650.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="apActiva" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlAddCostoOS">
+  <children>
+    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label fx:id="lblOS" maxWidth="1.7976931348623157E308" styleClass="labelOS" text="Obra Social" HBox.hgrow="ALWAYS" />
+        <Label styleClass="LabelParentesis" text="\$" />
+        <TextField fx:id="txtCostoOS" prefWidth="50.0" promptText="0" text="0">
+               <tooltip>
+                  <Tooltip  text="Monto que se cobrará a la obra social por este trabajo" />
+               </tooltip></TextField>
+        <Label text="Coseguro:" />
+        <Label styleClass="LabelParentesis" text="\$" />
+        <TextField fx:id="txtCoseguro" prefWidth="50.0" promptText="0" text="0">
+               <tooltip>
+                  <Tooltip  text="Valor de coseguro de este trabajo para esta obra social" />
+               </tooltip></TextField>
+        <Label text="Vigente desde:" />
+            <DatePicker fx:id="dpVigencia" promptText="-- Seleccionar fecha --">
+               <tooltip>
+                  <Tooltip  text="Seleccione una fecha a partir de la cual comienza la vigencia de estos valores" />
+               </tooltip></DatePicker>        
+      </children>
+      <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../Estilos/fxObraSocial.css" />
+    <URL value="@../Estilos/fxlogin.css" />
+  </stylesheets>
+</AnchorPane>

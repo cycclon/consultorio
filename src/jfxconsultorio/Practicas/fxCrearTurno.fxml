@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlCrearTurno">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <ScrollPane fx:id="sp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="800.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lblFecha" text="Horario:" GridPane.columnIndex="1" />
+                        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="2">
+                           <children>
+                              <ComboBox fx:id="cbHora" promptText="hh">
+                                 <tooltip>
+                                    <Tooltip  text="Seleccione la hora de inicio" />
+                                 </tooltip></ComboBox>
+                              <Label text=":" />
+                              <ComboBox fx:id="cbMinutos" promptText="mm">
+                                 <tooltip>
+                                    <Tooltip  text="Seleccione los minutos de inicio" />
+                                 </tooltip></ComboBox>
+                           </children>
+                        </HBox>
+                        <Label text="Paciente:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <HBox fx:id="hbBuscarPaciente" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ScrollPane prefHeight="100.0" prefWidth="550.0" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="vbBusquedaPacientes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button mnemonicParsing="false" onAction="#btnCrearPaciente_Click" text="Crear nuevo paciente..." GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <tooltip>
+                              <Tooltip  text="Si no encuentra el paciente que busca, presione este&#10;botón para registrar uno nuevo" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Iconos/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <TitledPane fx:id="tpPaciente" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="350.0" text="Paciente seleccionado:" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+                           <content>
+                              <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <children>
+                                    <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Documento:" />
+                                          <Label text="Obra social:" GridPane.rowIndex="1" />
+                                          <Label text="Saldo:" GridPane.rowIndex="2" />
+                                          <Label fx:id="lblDocumento" styleClass="LabelResaltado" GridPane.columnIndex="1">
+                                             <tooltip>
+                                                <Tooltip  text="Tipo y número de documento del paciente seleccionado" />
+                                             </tooltip></Label>
+                                          <Label fx:id="lblObraSocial" styleClass="LabelResaltado" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <tooltip>
+                                                <Tooltip  text="Nombre de la obra social del paciente" />
+                                             </tooltip></Label>
+                                          <Label fx:id="lblSaldo" styleClass="LabelResaltado" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <tooltip>
+                                                <Tooltip  text="Saldo de la cuenta del paciente seleccionado" />
+                                             </tooltip></Label>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <Label text="Práctica:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <HBox fx:id="hbBuscarPractica" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <ScrollPane prefHeight="120.0" prefWidth="550.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <content>
+                              <VBox fx:id="vbBusquedaPracticas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                           </content>
+                        </ScrollPane>
+                        <TitledPane fx:id="tpPractica" expanded="false" maxHeight="1.7976931348623157E308" prefHeight="150.0" prefWidth="350.0" text="Practica seleccionada" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                           <content>
+                              <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane hgap="10.0" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="lblLeyendaOS" text="Costo obra social ():" />
+                                          <Label fx:id="lblCostoOS" styleClass="LabelResaltado" text="\$" GridPane.columnIndex="1" />
+                                          <Label text="Coseguro:" GridPane.rowIndex="1" />
+                                          <Label text="Duración:" GridPane.rowIndex="2" />
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label styleClass="LabelParentesis" text="\$" />
+                                                <TextField fx:id="txtCostoCoseguro" prefWidth="75.0" />
+                                                <Label text="monto abonado:" />
+                                                <Label styleClass="LabelParentesis" text="\$" />
+                                                <TextField fx:id="txtPagado" prefWidth="75.0" promptText="0" />
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="lblDuracion" styleClass="LabelResaltado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <Label text="Solicitado por:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                           <children>
+                              <ComboBox fx:id="cbSolicitante" maxWidth="1.7976931348623157E308" promptText="-- Solicitante --">
+                                 <tooltip>
+                                    <Tooltip  text="Seleccione el nombre del médico solicitante" />
+                                 </tooltip></ComboBox>
+                              <Button mnemonicParsing="false" onAction="#btnBorrarSolicitante_Click" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/borrar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip  text="Presione este botón para borrar la selección" />
+                                 </tooltip>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#btnNuevoSolicitante_Click" styleClass="buttonIcon">
+                                 <tooltip>
+                                    <Tooltip  text="Presione este botón para registrar un nuevo solicitante" />
+                                 </tooltip>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                           </children>
+                        </HBox>
+                        <Label text="A cargo de (opcional):" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                           <children>
+                              <ComboBox fx:id="cbEncargado" maxWidth="1.7976931348623157E308" promptText="-- Encargado --">
+                                 <tooltip>
+                                    <Tooltip  text="Seleccione quien será el profesional que realizará el trabajo" />
+                                 </tooltip></ComboBox>
+                              <Button mnemonicParsing="false" onAction="#btnBorrarEncargado_Click" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/borrar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip  text="Presione este botón para borrar la selección" />
+                                 </tooltip></Button>
+                           </children>
+                        </HBox>
+                        <Label text="A firmar por (opcional):" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                           <children>
+                              <ComboBox fx:id="cbFirmante" maxWidth="1.7976931348623157E308" promptText="-- Firnante --">
+                                 <tooltip>
+                                    <Tooltip  text="Seleccione quien será el profesional que firmará el trabajo" />
+                                 </tooltip></ComboBox>
+                              <Button mnemonicParsing="false" onAction="#btnBorrarFirmante_Click" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/borrar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip  text="Presione este botón para borrar la selección" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="Campos adicionales:" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                        <VBox fx:id="vbCampos" alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="15">
+                           <padding>
+                              <Insets right="25.0" />
+                           </padding>
+                        </VBox>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/turnos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/pacientes.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/practicas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/profesionales.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="12">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/practicante.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="13">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/firmante.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="15">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/campo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <Separator maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+                        <Separator maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" GridPane.vgrow="ALWAYS" />
+                        <Separator maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.rowIndex="14" GridPane.vgrow="ALWAYS" />
+                     </children>
+                  </GridPane>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnRegistrar_Click" text="Registrar">
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para registrar el nuevo turno" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/ok.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

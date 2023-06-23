@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlDetallePractica">
+   <children>
+      <Label fx:id="lblMensaje" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnPracticas_Click" text="&lt;&lt; Ir a prácticas" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/practicas.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblNombre" styleClass="labelOS" text="Label">
+                     <tooltip>
+                        <Tooltip text="Nombre de la práctica" />
+                     </tooltip>
+                  </Label>
+                  <Label fx:id="lblCodigo" text="Label">
+                     <tooltip>
+                        <Tooltip text="Código de la práctica" />
+                     </tooltip>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <Label prefWidth="300.0" styleClass="TituloFormulario" text="Plantillas" />
+            <ScrollPane prefHeight="100.0" prefWidth="300.0">
+               <content>
+                  <VBox fx:id="vbPlantillas" alignment="TOP_CENTER" />
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnRegistrarPlantilla_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Presione este botón para registrar una nueva plantilla" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label fx:id="lblCC" text="Centro de costos: ">
+                     <tooltip>
+                        <Tooltip text="Centro de costos al que están asignados los ingresos por esta práctica" />
+                     </tooltip>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="hbEstadO" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label fx:id="lblEstado" text="Estado: Activa">
+                     <tooltip>
+                        <Tooltip text="Estado actual de esta práctica" />
+                     </tooltip>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#btnAccion_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fx:id="ivBoton" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="ttAyudaBoton" text="Empty Tooltip" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" spacing="10.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="Duración:" />
+                  <TextField fx:id="txtHoras" prefWidth="35.0" promptText="hh">
+                     <tooltip>
+                        <Tooltip text="Horas de duración de la nueva práctica" />
+                     </tooltip>
+                  </TextField>
+                  <Label styleClass="LabelParentesis" text=":">
+                     <stylesheets>
+                        <URL value="@../Estilos/fxObraSocial.css" />
+                     </stylesheets>
+                  </Label>
+                  <TextField fx:id="txtMinutos" prefWidth="35.0" promptText="mm">
+                     <tooltip>
+                        <Tooltip text="Minutos de duración de la nueva práctica" />
+                     </tooltip>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" spacing="10.0">
+               <children>
+                  <Label text="Valores vigentes el día:" />
+                  <DatePicker fx:id="dpVigencia" promptText="seleccionar día">
+                     <tooltip>
+                        <Tooltip text="Seleccione un día para ver los valores &#10;vigentes por obra social en ese momento." />
+                     </tooltip>
+                  </DatePicker>
+                  <Button mnemonicParsing="false" onAction="#dpVigencia_SelectedIndexChanged" text="Ver">
+                     <tooltip>
+                        <Tooltip text="Presione este botón para ver &#10;los valores vigentes en la fecha seleccionada" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/ver.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <VBox fx:id="vbAdd" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                  <Button mnemonicParsing="false" onAction="#btnAgregar_Click" text="Agregar valor">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Presione este botón para agregar un nuevo valor de práctica" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <ScrollPane fx:id="spValores" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="vbOSs" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <tooltip>
+                  <Tooltip text="Lista de costos de obra social y coseguro para esta práctica" />
+               </tooltip>
+            </ScrollPane>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#btnGuardar_Click" text="Guardar Cambios">
+               <tooltip>
+                  <Tooltip text="Presione este botón para guardar los cambios efectuados en esta práctica." />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/guardar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

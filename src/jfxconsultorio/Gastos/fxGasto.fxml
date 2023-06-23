@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" styleClass="hboxEncabezado" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Gastos.ctrlGasto">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <DatePicker fx:id="dpFecha" maxWidth="1.7976931348623157E308" prefWidth="120.0" promptText="Fecha">
+               <tooltip>
+                  <Tooltip  text="Feha de ocurrencia del gasto" />
+               </tooltip></DatePicker>
+            <VBox maxWidth="1.7976931348623157E308">
+               <children>
+                  <Label fx:id="lblConcepto" maxWidth="250.0" prefWidth="250.0" styleClass="LabelResaltado" text="Concepto:">
+                     <tooltip>
+                        <Tooltip fx:id="ttConcepto"  text="Empty Tooltip" />
+                     </tooltip>
+                  </Label>
+                  <Label fx:id="lblFrecuencia" text="Label">
+                     <tooltip>
+                        <Tooltip  text="Frecuencia con la que el gasto se llevará a cabo" />
+                     </tooltip></Label>
+               </children>
+            </VBox>
+            <Label styleClass="LabelParentesis" text="\$" />
+            <TextField fx:id="txtMonto" prefWidth="75.0" promptText="Monto">
+               <tooltip>
+                  <Tooltip  text="Monto del gasto" />
+               </tooltip></TextField>
+            <Button fx:id="btnRegistrar" defaultButton="true" mnemonicParsing="false" onAction="#btnRegistrar_Click" styleClass="buttonIcon">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/ok.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip  text="Presione este botón para efectivizar este gasto" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDelete_Click" styleClass="buttonIcon">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip  text="Eliminar este gasto" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnDelteAll" mnemonicParsing="false" onAction="#btnDeleteAll_Click" styleClass="buttonIcon">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" onDragDetected="#btnDeleteAll_Click" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/deleteall.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip  text="Eliminar este gasto y futuras ocurrencias" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

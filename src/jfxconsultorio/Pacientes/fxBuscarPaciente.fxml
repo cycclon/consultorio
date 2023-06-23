@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" prefHeight="40.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Pacientes.ctrlBuscarPaciente">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="10.0" style="-fx-border-style: solid; -fx-border-width: 0.3px; -fx-border-color: #CDCDCD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label text="Buscar por:" />
+            <RadioButton fx:id="rdApellido" mnemonicParsing="false" selected="true" text="Apellido">
+               <toggleGroup>
+                  <ToggleGroup fx:id="busqueda" />
+               </toggleGroup>
+               <tooltip>
+                  <Tooltip  text="Seleccione esta opción para buscar pacientes por apellido" />
+               </tooltip>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Número de documento" toggleGroup="$busqueda">
+               <tooltip>
+                  <Tooltip  text="Seleccione esta opción para buscar pacientes por número de documento" />
+               </tooltip></RadioButton>
+            <TextField fx:id="txtBusqueda" prefWidth="150.0" promptText="Apellido / Documento">
+               <tooltip>
+                  <Tooltip  text="En este campo ingrese el valor a buscar" />
+               </tooltip></TextField>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

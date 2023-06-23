@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlAddCampoTrabajo">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <TextField fx:id="txtNombre" promptText="Nombre">
+               <tooltip>
+                  <Tooltip  text="Nombre de referencia del nuevo campo" />
+               </tooltip></TextField>
+            <Label styleClass="LabelParentesis" text="*-" />
+            <TextField fx:id="txtCodigo" promptText="Código para reporte">
+               <tooltip>
+                  <Tooltip  text="Código que se utilizará para generación de informes de trabajos" />
+               </tooltip></TextField>
+            <Label styleClass="LabelParentesis" text="-*" />
+            <CheckBox fx:id="chObligatorio" mnemonicParsing="false" text="Obligatorio">
+               <tooltip>
+                  <Tooltip  text="Indicar si el campo es obligatorio para&#10;mostrar alertas en caso de que falte" />
+               </tooltip></CheckBox>
+            <Button mnemonicParsing="false" onAction="#btnAgregar_Click" text="Registrar">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip  text="Presione este botón para registrar este campo" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

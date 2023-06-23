@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Gastos.ctrlGastos">
+   <children>
+      <Label fx:id="lblMensaje" alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+               <children>
+                  <VBox fx:id="vbAlertas" />
+                  <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0">
+                     <children>
+                        <DatePicker fx:id="dpMes" onAction="#dpDia_ValueChanged" promptText="Seleccionar fecha">
+                           <tooltip>
+                              <Tooltip  text="Seleccione un dia del mes para &#10;ver los gastos correspondientes a ese mes" />
+                           </tooltip>
+                        </DatePicker>
+                        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#btnRegistrarGasto_Click" text="Registrar Gasto">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Iconos/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip  text="Presione este botón para abrir el formulario de registro de gastos" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <ScrollPane fx:id="spGastos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="580.0">
+                     <content>
+                        <VBox fx:id="vbGastos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                     </content>
+                     <tooltip>
+                        <Tooltip  text="Lista de gastos registrados para el mes seleccionado" />
+                     </tooltip>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="vbAccion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

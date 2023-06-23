@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Monedas>
+		<PesoArgentino>
+			<Cambio fecha="05/04/2014" valor="1" />
+			<Cambio fecha="04/04/2014" valor="1" />
+			<Cambio fecha="03/04/2014" valor="1" />
+		</PesoArgentino>
+		<DolarOficial>
+			<Cambio fecha="05/04/2014" valor="8.01" />
+			<Cambio fecha="04/04/2014" valor="8.00" />
+			<Cambio fecha="03/04/2014" valor="7.99" />
+		</DolarOficial>
+		<DolarBlue>
+			<Cambio fecha="05/04/2014" valor="10.800" />
+			<Cambio fecha="04/04/2014" valor="10.950" />
+			<Cambio fecha="03/04/2014" valor="11.010" />
+		</DolarBlue>
+		<Euro>
+			<Cambio fecha="05/04/2014" valor="11.300" />
+			<Cambio fecha="04/04/2014" valor="11.250" />
+			<Cambio fecha="03/04/2014" valor="11.110" />
+		</Euro>
+</Monedas>

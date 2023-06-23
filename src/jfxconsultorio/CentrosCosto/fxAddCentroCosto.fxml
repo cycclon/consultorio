@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="-1.0" prefWidth="-1.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.CentrosCosto.ctrlAddCentroCosto">
+  <children>
+    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <TextField id="txtCodigo" fx:id="txtNombre" prefWidth="200.0" promptText="Nombre">
+          <tooltip>
+            <Tooltip text="Nombre del nuevo centro de costos" />
+          </tooltip>
+        </TextField>
+        <Label styleClass="LabelParentesis" text="(" />
+        <TextField fx:id="txtCodigo" prefWidth="75.0" promptText="Código">
+          <tooltip>
+            <Tooltip text="Código único del nuevo centro de costos" />
+          </tooltip>
+        </TextField>
+        <Label styleClass="LabelParentesis" text=")" />
+        <Button defaultButton="true" mnemonicParsing="false" onAction="#btnAgregar_Click" text="Registrar">
+          <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../Imagenes/Iconos/add.png" />
+              </image>
+            </ImageView>
+          </graphic>
+          <tooltip>
+            <Tooltip text="Presione este botón parar registrar un nuevo centro de costos" />
+          </tooltip>
+        </Button>
+      </children>
+      <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../Estilos/fxlogin.css" />
+    <URL value="@../Estilos/fxObraSocial.css" />
+  </stylesheets>
+</AnchorPane>

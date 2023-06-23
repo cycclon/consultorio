@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="-1.0" prefWidth="450.0" styleClass="apActiva" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.CentrosCosto.ctrlCentroCosto">
+  <children>
+    <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <ImageView fx:id="Icono" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Imagenes/Iconos/costos.png" />
+          </image>
+        </ImageView>
+        <Label fx:id="lblNombre" maxWidth="1.7976931348623157E308" styleClass="labelOS" text="Centro de costo" HBox.hgrow="ALWAYS" />
+        <Label fx:id="lblCodigo" text="(cod)" />
+        <Button fx:id="btnAccion" mnemonicParsing="false" onAction="#btnAccion_Click" text="Eliminar">
+          <graphic>
+            <ImageView fx:id="Boton" fitHeight="20.0" fitWidth="20.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+          <tooltip>
+            <Tooltip fx:id="ttBoton"  text="Empty Tooltip" />
+          </tooltip>
+        </Button>
+      </children>
+      <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../Estilos/fxObraSocial.css" />
+    <URL value="@../Estilos/fxlogin.css" />
+  </stylesheets>
+</AnchorPane>

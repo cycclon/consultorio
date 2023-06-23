@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlBuscarPractica">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" style="-fx-border-style: solid; -fx-border-width: 0.3px; -fx-border-color: #CDCDCD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label text="Buscar por:" />
+            <RadioButton fx:id="rdCodigo" mnemonicParsing="false" selected="true" text="Código">
+               <toggleGroup>
+                  <ToggleGroup fx:id="busqueda" />
+               </toggleGroup>
+               <tooltip>
+                  <Tooltip  text="Seleccione esta opción para buscar prácticas por código" />
+               </tooltip>
+            </RadioButton>
+            <RadioButton fx:id="rdNombre" mnemonicParsing="false" text="Nombre" toggleGroup="$busqueda">
+               <tooltip>
+                  <Tooltip  text="Seleccione esta opción para buscar prácticas por nombre" />
+               </tooltip></RadioButton>
+            <TextField fx:id="txtBusqueda" promptText="Código / Nombre">
+               <tooltip>
+                  <Tooltip  text="Ingrese el código o nombre de la práctica deseada" />
+               </tooltip></TextField>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

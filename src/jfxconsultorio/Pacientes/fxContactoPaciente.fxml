@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Pacientes.ctrlContactoPaciente">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label maxWidth="1.7976931348623157E308" styleClass="TituloFormulario" text="Datos de contacto" />
+            <ListView fx:id="lstContacto" minHeight="100.0" prefHeight="100.0" prefWidth="400.0">
+               <tooltip>
+                  <Tooltip  text="Lista de datos de contactos registrados para este paciente" />
+               </tooltip></ListView>
+            <HBox alignment="CENTER_RIGHT">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnQuitar" mnemonicParsing="false" onAction="#btnQuitarElemento_Click" text="Quitar seleccionado">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/remove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para quitar el elemento seleccionado" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <Label maxWidth="1.7976931348623157E308" styleClass="TituloFormulario" text="Agregar:" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Label text="Dirección:" />
+                  <TextField fx:id="txtCalle" prefWidth="110.0" promptText="Nombre de calle" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Nombre de la calle donde reside el paciente" />
+                     </tooltip></TextField>
+                  <TextField fx:id="txtAltura" prefWidth="110.0" promptText="Altura/Intersección" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Numeración o intersección con otra calle" />
+                     </tooltip></TextField>
+                  <TextField fx:id="txtPisoDpto" prefWidth="75.0" promptText="Piso &amp; dpto" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Número de piso y/o departamento" />
+                     </tooltip></TextField>
+                  <TextField fx:id="txtLocalidad" prefWidth="100.0" promptText="Localidad/Barrio" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Localidad y/o barrio de residencia" />
+                     </tooltip></TextField>
+                  <Button mnemonicParsing="false" onAction="#btnAgregarDireccion_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para agregar esta dirección" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+               <children>
+                  <Label text="Teléfono:" />
+                  <ComboBox fx:id="cbTipoTelefono" promptText="--Tipo--">
+                     <tooltip>
+                        <Tooltip  text="Tipo de teléfono que se registrará" />
+                     </tooltip></ComboBox>
+                  <TextField fx:id="txtTelefono" prefWidth="150.0" promptText="Número" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Número de teléfono. Incluir caracteristicas si es necesario" />
+                     </tooltip></TextField>
+                  <Button mnemonicParsing="false" onAction="#btnAgregarTelefono_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para agregar este teléfono" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Label text="E-mail:" />
+                  <TextField fx:id="txtDireccionEmail" prefWidth="150.0" promptText="Dirección" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Dirección de e-mail" />
+                     </tooltip></TextField>
+                  <Label styleClass="LabelParentesis" text="\@" />
+                  <TextField fx:id="txtServidorEmail" promptText="Servidor" styleClass="textPequeno">
+                     <tooltip>
+                        <Tooltip  text="Dirección del servidor de correo electrónico" />
+                     </tooltip></TextField>
+                  <Button mnemonicParsing="false" onAction="#btnAgregarEmail_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para agregar esta dirección de correo electrónico" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

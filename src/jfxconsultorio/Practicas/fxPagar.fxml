@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlPagar">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <GridPane hgap="10.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Trabajo:" />
+                  <Label text="Fecha:" GridPane.rowIndex="1" />
+                  <Label text="Hora:" GridPane.rowIndex="2" />
+                  <Label text="Paciente:" GridPane.rowIndex="7" />
+                  <Label text="Saldo de cuenta:" GridPane.rowIndex="8" />
+                  <Label text="Costo de coseguro:" GridPane.rowIndex="3" />
+                  <Label text="Pagado de coseguro:" GridPane.rowIndex="4" />
+                  <Label fx:id="lblTrabajo" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre y código de la práctica" />
+                     </tooltip></Label>
+                  <Label fx:id="lblFecha" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Fehca para la que está programado este trabajo" />
+                     </tooltip></Label>
+                  <Label fx:id="lblHora" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip  text="Horario para el que está programado este trabajo" />
+                     </tooltip></Label>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <Label styleClass="LabelParentesis" text="\$" />
+                        <TextField fx:id="txtPago" prefWidth="75.0" promptText="0,00" HBox.hgrow="NEVER">
+                           <tooltip>
+                              <Tooltip  text="Ingrese el monto que el cliente va a abonar" />
+                           </tooltip></TextField>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblCoseguro" styleClass="LabelParentesis" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <tooltip>
+                        <Tooltip  text="Monto a abonar en concepto de coseguro" />
+                     </tooltip></Label>
+                  <Label fx:id="lblPaciente" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <tooltip>
+                        <Tooltip  text="Nombre del paciente que abona" />
+                     </tooltip></Label>
+                  <Label fx:id="lblSaldo" styleClass="LabelParentesis" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <tooltip>
+                        <Tooltip  text="Saldo actual de la cuenta del paciente" />
+                     </tooltip></Label>
+                  <Label text="A pagar:" GridPane.rowIndex="5" />
+                  <Label fx:id="lblPagado" styleClass="LabelParentesis" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip  text="Monto abonado actualmente de coseguro" />
+                     </tooltip></Label>
+                  <Label text="Fecha de pago:" GridPane.rowIndex="6" />
+                  <DatePicker fx:id="dpFecha" promptText="Seleccionar fecha" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <tooltip>
+                        <Tooltip text="Seleccione una fecha de pago" />
+                     </tooltip></DatePicker>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnPagar_Click" text="Pagar">
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para efectivizar el pago" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/pago.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

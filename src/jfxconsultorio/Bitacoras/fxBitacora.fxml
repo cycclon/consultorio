@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" minWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="jfxconsultorio.Bitacoras.ctrlBitacora">
+   <children>
+      <HBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblFecha" text="Label" />
+            <Label fx:id="lblTipo" text="Label" />
+            <Label fx:id="lblAccion" maxWidth="1.7976931348623157E308" text="Label" HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblUsuario" text="Label" />
+            <Label fx:id="lblIP" text="Label" />
+            <Label fx:id="lblWorkCenter" text="Label" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

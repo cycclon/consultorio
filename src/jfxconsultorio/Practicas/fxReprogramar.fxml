@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlReprogramar">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <GridPane hgap="10.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Mover:" />
+                  <Label fx:id="lblPractica" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre y código de la práctica" />
+                     </tooltip></Label>
+                  <Label text="de:" GridPane.rowIndex="1" />
+                  <Label fx:id="lblPaciente" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Día y hora para el que está programado actualmente este trabajo" />
+                     </tooltip></Label>
+                  <Label text="Para el día:" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="dpFecha" promptText="Seleccionar fecha" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip text="Empty Tooltip" />
+                     </tooltip></DatePicker>
+                  <Label text="a las:" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <ComboBox fx:id="cbHora" promptText="hh">
+                           <tooltip>
+                              <Tooltip  text="Seleccionar una hora de inicio" />
+                           </tooltip></ComboBox>
+                        <Label text=":" />
+                        <ComboBox fx:id="cbMinutos" promptText="mm">
+                           <tooltip>
+                              <Tooltip  text="Seleccionar minutos de inicio" />
+                           </tooltip></ComboBox>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnReprogramar_Click" text="Reprogramar">
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para reprogramar este trabajo" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/turnos.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlRealizar">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane hgap="10.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Trabajo:" />
+                  <Label text="Paciente:" GridPane.rowIndex="1" />
+                  <Label text="Día:" GridPane.rowIndex="2" />
+                  <Label text="Hora:" GridPane.rowIndex="3" />
+                  <Label text="Realizado por:" GridPane.rowIndex="4" />
+                  <Label fx:id="lblTrabajo" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre y código de la práctica" />
+                     </tooltip></Label>
+                  <Label fx:id="lblPaciente" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre completo del paciente" />
+                     </tooltip></Label>
+                  <Label fx:id="lblDia" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip  text="Día para el que está programado el trabajo" />
+                     </tooltip></Label>
+                  <Label fx:id="lblHorario" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <tooltip>
+                        <Tooltip  text="Horario para el que está programado el trabajo" />
+                     </tooltip></Label>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <ComboBox fx:id="cbRealizador" maxWidth="1.7976931348623157E308" promptText="-- Realizado por --">
+                           <tooltip>
+                              <Tooltip text="Quien llevó a cabo este trabajo" />
+                           </tooltip></ComboBox>
+                        <Label fx:id="lblAclaracion" />
+                     </children>
+                  </HBox>
+                  <Label text="Observaciones:" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtObservaciones" alignment="TOP_LEFT" prefHeight="250.0" prefWidth="300.0" promptText="Observaciones" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <tooltip>
+                        <Tooltip  text="(Opcional) Observaciones adicionales de este trabajo" />
+                     </tooltip></TextField>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnRealizar_Click" text="Realizar">
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para registrar la realización de este trabajo" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/practicante.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

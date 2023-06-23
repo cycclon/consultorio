@@ -1,0 +1,32 @@
+.Notificacion {
+    -fx-font: 16px "Century Gothic";
+    -fx-text-fill: white;
+    -fx-border-radius: 50px;
+    -fx-border-color: white;
+    -fx-background-color: red;
+    -fx-background-radius: 50px;
+    -fx-padding: 2px;
+    
+}
+
+.labelNombre
+{
+    -fx-font: 14px "Century Gothic";
+}
+
+.button
+{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 3px;
+}
+
+.button:hover
+{
+    -fx-background-color: #e6e6e6;
+}
+
+.button:pressed
+{
+    -fx-background-color: #999999;
+}

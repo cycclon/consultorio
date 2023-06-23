@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.CentrosCosto.ctrlCentrosCosto">
+  <children>
+    <Label fx:id="lblMensaje" alignment="CENTER" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+          <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0">
+            <children>
+              <Label styleClass="TituloFormulario" text="Centros de costo registrados" />
+              <CheckBox fx:id="chkEliminados" mnemonicParsing="false" onAction="#chkEliminadas_CheckChanged" text="Ver eliminados">
+                     <tooltip>
+                        <Tooltip text="Presione este botón para ver los centros &#10;de costo que fueron eliminados y así poder restaurarlos" />
+                     </tooltip>
+                  </CheckBox>
+                  <ScrollPane fx:id="sp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="600.0">
+                     <content>
+                    <VBox fx:id="vbCentrosCosto" alignment="TOP_CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                    </VBox>
+                     </content>
+                  </ScrollPane>
+            </children>
+            <padding>
+              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+          </VBox>
+         </children>
+      </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+  </stylesheets>
+</AnchorPane>

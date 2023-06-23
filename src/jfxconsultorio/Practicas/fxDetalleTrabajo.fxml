@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlDetalleTrabajo">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <Label fx:id="lblMensaje" alignment="CENTER" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ScrollPane fx:id="sp" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0">
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnTurnos_Click" text="&lt;- Ir a turnos" />
+                                    <Button mnemonicParsing="false" text="&lt;-- Ir a paciente" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnPagar" mnemonicParsing="false" onAction="#btnPagarPressed" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/pago.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para registrar el pago de coseguro" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnReprogramar" mnemonicParsing="false" onAction="#btnReprogramarPressed" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/turnos.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para reprogramar este trabajo" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnRealizar" mnemonicParsing="false" onAction="#btnRealizarPressed" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/practicante.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para marcar el trabajo como realizado" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnFirmar" mnemonicParsing="false" onAction="#btnFirmarPressed" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/firmante.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para firmar este trabajo" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnInforme" mnemonicParsing="false" onAction="#btnVerInforme_Click" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/informes.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para imprimir el informe del trabajo" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarPressed" styleClass="buttonIcon">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/remove.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para cancelar este trabajo" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <GridPane hgap="10.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Práctica:" GridPane.rowIndex="1" />
+                              <Label text="Paciente:" GridPane.rowIndex="4" />
+                              <Label fx:id="lblPaciente" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <tooltip>
+                                    <Tooltip text="Nombre completo del paciente" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Día:" GridPane.rowIndex="7" />
+                              <Label text="Horario:" GridPane.rowIndex="8" />
+                              <Label text="Estado de trabajo:" />
+                              <Label fx:id="lblEstado" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                                 <tooltip>
+                                    <Tooltip text="Estado actual de este trabajo" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="lblDia" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <tooltip>
+                                    <Tooltip text="Día para el que está programado el trabajo" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="lblHorario" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <tooltip>
+                                    <Tooltip text="Horario para el que está programado el trabajo" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Solicitado por:" GridPane.rowIndex="9" />
+                              <Label text="Realizado por:" GridPane.rowIndex="10" />
+                              <Label text="Firmado por:" GridPane.rowIndex="11" />
+                              <Label fx:id="lblSolicitado" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <tooltip>
+                                    <Tooltip text="Médico que solicita este trabajo" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="lblRealizado" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label fx:id="lblFirmado" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <tooltip>
+                                    <Tooltip text="Profesional que firmó el trabajo" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Obra social:" GridPane.rowIndex="6" />
+                              <Label fx:id="lblOS" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <tooltip>
+                                    <Tooltip text="Nombre de la obra social del paciente" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Costo de obra social:" GridPane.rowIndex="12" />
+                              <Label fx:id="lblCostoOS" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                 <tooltip>
+                                    <Tooltip text="Monto a percibir de la obra social" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Costo de coseguro:" GridPane.rowIndex="13" />
+                              <Label text="Pagado de coseguro:" GridPane.rowIndex="14" />
+                              <Label fx:id="lblPagoCoseguro" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                 <tooltip>
+                                    <Tooltip text="Monto abonado por el paciente" />
+                                 </tooltip>
+                              </Label>
+                              <Label text="Documento:" GridPane.rowIndex="5" />
+                              <Label fx:id="lblDocumento" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <HBox fx:id="hbBuscarPractica" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ScrollPane prefHeight="120.0" prefWidth="550.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <content>
+                                    <VBox fx:id="vbBusquedaPracticas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                                 </content>
+                              </ScrollPane>
+                              <TitledPane fx:id="tpPractica" expanded="false" maxHeight="1.7976931348623157E308" prefHeight="150.0" prefWidth="350.0" text="Practica seleccionada" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <content>
+                                    <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <GridPane hgap="10.0" vgap="5.0">
+                                             <children>
+                                                <Label fx:id="lblLeyendaOS" text="Costo obra social ():" />
+                                                <Label fx:id="lblCostoOS1" styleClass="LabelResaltado" text="\$" GridPane.columnIndex="1" />
+                                                <Label text="Coseguro:" GridPane.rowIndex="1" />
+                                                <Label text="Duración:" GridPane.rowIndex="2" />
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label fx:id="lblCostoCoseguro" styleClass="LabelParentesis" text="\$" />
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="lblDuracion" styleClass="LabelResaltado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                              <TextField fx:id="txtCostoCoseguro" prefWidth="75.0" styleClass="LabelResaltado" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="13" />
+                           </children>
+                        </GridPane>
+                        <VBox fx:id="vbPagos" alignment="CENTER_LEFT" spacing="3.0" />
+                        <Label maxWidth="1.7976931348623157E308" styleClass="TituloFormulario" text="Campos adicionales:" />
+                        <VBox fx:id="vbAdicionales" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                        <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#btnGuardarValores_Click" text="Guardar">
+                                 <tooltip>
+                                    <Tooltip text="Presione este botón para guardar los valores de los campos adicionales" />
+                                 </tooltip>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/guardar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="vbOperar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

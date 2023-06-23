@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlCampoTrabajo">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="hboxEncabezado" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblNombre" minWidth="250.0"  styleClass="LabelResaltado" text="Nombre del campo" />
+            <Label fx:id="lblObligatorio" text="Label">
+               <tooltip>
+                  <Tooltip  text="Indica si el campo es obligatorio" />
+               </tooltip></Label>
+            <Button mnemonicParsing="false" onAction="#btnEliminar_Click" text="Eliminar">
+               <graphic>
+                  <ImageView fx:id="ivBoton" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip  text="Presione este botón para eliminar este campo" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

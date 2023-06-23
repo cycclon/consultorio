@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" maxHeight="40.0" maxWidth="1.7976931348623157E308" onMouseEntered="#Mouse_Over" onMouseExited="#Mouse_Out" prefHeight="40.0" prefWidth="-1.0" styleClass="apActiva" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.ObrasSociales.ctrlObraSocial">
+  <children>
+    <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" padding="$x1" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <StackPane alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="40.0">
+          <children>
+            <ImageView fx:id="imgLogo" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnCambiarImagen" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnCambiarImagen_Click" styleClass="CambiarImagen" text="" textAlignment="CENTER" visible="false">
+              <graphic>
+                <ImageView fitHeight="10.0" fitWidth="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../Imagenes/Iconos/Edit16.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <tooltip>
+                <Tooltip  text="Presione este botón para elegir un &#10;logo diferente para esta obra social." />
+              </tooltip>
+            </Button>
+          </children>
+        </StackPane>
+        <Label fx:id="lblOS" styleClass="labelOS" text="Label" />
+        <Label fx:id="lblCodigo" text="Label" />
+        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#btnEliminar_Click" text="Eliminar">
+              <tooltip>
+                <Tooltip fx:id="tlModificar"  text="" />
+              </tooltip>
+                     <graphic>
+                        <ImageView fx:id="ivIcono" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+            </Button>
+          </children>
+          <HBox.margin>
+            <Insets fx:id="x1" />
+          </HBox.margin>
+        </HBox>
+      </children>
+    </HBox>
+  </children>
+  <padding>
+    <Insets bottom="10.0" left="15.0" right="15.0" />
+  </padding>
+  <stylesheets>
+    <URL value="@../Estilos/fxObraSocial.css" />
+      <URL value="@../Estilos/fxlogin.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="700.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlAgregarCostoOS">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ComboBox fx:id="cbOS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#cbOS_SelectedItemChanged" promptText="-- Obra social --" HBox.hgrow="ALWAYS">
+               <tooltip>
+                  <Tooltip  text="Seleccione una obra social" />
+               </tooltip>
+            </ComboBox>
+            <Label styleClass="LabelParentesis" text="\$" />
+            <TextField fx:id="txtCostoOS" minWidth="50.0" prefWidth="50.0" text="0">
+               <tooltip>
+                  <Tooltip  text="Monto que se percibirá de la obra social por este trabajo" />
+               </tooltip></TextField>
+            <Label alignment="CENTER_RIGHT" minWidth="75.0" text="Coseguro:" />
+            <Label styleClass="LabelParentesis" text="\$" />
+            <TextField fx:id="txtCoseguro" minWidth="50.0" prefWidth="50.0" text="0">
+               <tooltip>
+                  <Tooltip  text="Monto de coseguro a abonar por el paciente" />
+               </tooltip></TextField>
+            <Label alignment="CENTER_RIGHT" minWidth="90.0" text="Vigente desde:" />
+            <DatePicker fx:id="dpVigencia" minWidth="174.0" promptText="-- Seleccionar fecha --">
+               <tooltip>
+                  <Tooltip  text="Seleccione una fecha de inicio de vigencia para estos montos" />
+               </tooltip></DatePicker>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxObraSocial.css" />
+      <URL value="@../Estilos/fxlogin.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="1.7976931348623157E308" styleClass="apActiva" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlPractica">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblNombre" maxWidth="1.7976931348623157E308" styleClass="labelOS" text="Label" HBox.hgrow="ALWAYS">
+               <tooltip>
+                  <Tooltip text="Nombre de la práctica" />
+               </tooltip></Label>
+            <Label fx:id="lblCodigo" text="Label">
+               <tooltip>
+                  <Tooltip text="Código de la práctica" />
+               </tooltip></Label>
+            <Button mnemonicParsing="false" onAction="#btnDetalle_Click" text="Detalle...">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/ver.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Presione este botón para ver el detalle de esta práctica" />
+               </tooltip></Button>
+            <Button mnemonicParsing="false" onAction="#btnAccion_Click" styleClass="buttonIcon">
+               <graphic>
+                  <ImageView fx:id="ivBoton" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="ttBoton" text="Empty Tooltip" />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+</AnchorPane>

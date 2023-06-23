@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Cuentas.ctrlCuenta">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <GridPane hgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Saldo inicial:" />
+                  <Label fx:id="lblSaldoInicial" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip text="Saldo al momento de dar de alta la cuenta" />
+                     </tooltip></Label>
+               </children>
+            </GridPane>
+            <Label maxWidth="1.7976931348623157E308" styleClass="TituloFormulario" text="Movimientos:">
+               <tooltip>
+                  <Tooltip text="Listado de todos los movimientos de la cuenta seleccionada" />
+               </tooltip>
+            </Label>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="350.0" prefWidth="500.0">
+               <content>
+                  <VBox fx:id="vbMovimientos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               </content>
+            </ScrollPane>
+            <GridPane hgap="10.0">
+               <children>
+                  <Label text="Saldo actual:" />
+                  <Label fx:id="lblSaldoFinal" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip text="Saldo al día de hoy" />
+                     </tooltip></Label>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

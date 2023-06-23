@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlTurno">
+   <children>
+      <HBox spacing="5.0" styleClass="hboxEncabezado" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="lblHorario" styleClass="labelHorario" text="15:30">
+                           <tooltip>
+                              <Tooltip text="Hora de inicio" />
+                           </tooltip></Label>
+                        <Label fx:id="lblFinalizacion" styleClass="labelFinalizacion" text="Finaliza: 17:00 hs.">
+                           <tooltip>
+                              <Tooltip text="Hora de finalización estimada" />
+                           </tooltip></Label>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="ivCancel" fitHeight="95.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Iconos/Cancel.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="3.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" styleClass="HBoxSeparador">
+                     <children>
+                        <Label styleClass="labelLabel" text="Paciente:" />
+                        <Button fx:id="btnPaciente" mnemonicParsing="false" onAction="#btnPaciente_Click" styleClass="buttonIcon" text="Button" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="labelLabel" text="Documento:" />
+                        <Label fx:id="lblDocumento" styleClass="labelActores" text="Label" />
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Button fx:id="lblPractica" mnemonicParsing="false" onAction="#btnPractica_Click" style="-fx-font-family: &quot;Century Gothic&quot;; -fx-font-size: 18px; -fx-text-fill: #999999;" styleClass="buttonIcon" text="ECOGRAFIA 4D">
+                     <tooltip>
+                        <Tooltip text="Presione este botón para ver la hoja &#10;con el detalle del trabajo" />
+                     </tooltip>
+                  </Button>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <Label styleClass="labelLabel" text="Solicitado por:" />
+                        <Label fx:id="lblSolicitante" styleClass="labelActores" text="Label">
+                           <tooltip>
+                              <Tooltip text="Nombre del médico solicitante" />
+                           </tooltip></Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <Label styleClass="labelLabel" text="Encargado:" />
+                        <Label fx:id="lblPracticante" styleClass="labelActores" text="Label">
+                           <tooltip>
+                              <Tooltip text="Nombre del profesional a cargo de este trabajo" />
+                           </tooltip></Label>
+                     </children>
+                  </HBox>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <Label styleClass="labelLabel" text="Restante por pagar:" />
+                        <Label fx:id="lblSaldo" styleClass="labelActores" text="Label">
+                           <tooltip>
+                              <Tooltip text="Monto de coseguro restante por pagar" />
+                           </tooltip></Label>
+                     </children>
+                  </HBox>
+                  <HBox spacing="3.0">
+                     <children>
+                        <Button fx:id="btnComprobante" mnemonicParsing="false" onAction="#btnImprimirComprobante_Click" text="Comprobante">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Iconos/comprobante_sm.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnDuplicar" mnemonicParsing="false" onAction="#btnDuplicar_Click" text="Duplicar">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Iconos/copy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox spacing="2.0">
+               <children>
+                  <Button fx:id="btnPagar" mnemonicParsing="false" onAction="#btnPagar_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/pago.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Registrar pago" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnReprogramar" mnemonicParsing="false" onAction="#btnReprogramar_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/turnos_sm.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Reprogramar turno" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnRealizar" mnemonicParsing="false" onAction="#btnRealizar_click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/practicante.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Realizar trabajo" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnFirmar" mnemonicParsing="false" onAction="#btnFirmar_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/firmante_sm.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Firmar trabajo" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnInforme" mnemonicParsing="false" onAction="#btnVerInforme_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/informes_sm.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Presione este botón para ver, editar e imprimir el informe del trabajo" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelar_Click" styleClass="buttonIcon">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/remove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Cancelar turno" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../Estilos/Turno.css" />
+      <URL value="@../Estilos/fxlogin.css" />
+   </stylesheets>
+</AnchorPane>

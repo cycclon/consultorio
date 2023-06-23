@@ -1,0 +1,97 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.root
+{
+    -fx-font: 14px "Segoe UI Light";   
+}
+
+.label{
+    -fx-text-fill: #999999;
+}
+
+.errorlabel{
+    -fx-border-width: 1px;
+    -fx-border-color: #cc0033;
+    -fx-background-color: #ffeeee;
+    -fx-border-radius: 7px;
+    -fx-padding: 3px;
+    -fx-background-radius: 7px;
+    -fx-text-fill: #cc0033;
+    
+}
+
+.messagelabel{
+    -fx-border-width: 1px;
+    -fx-border-color: #009900;
+    -fx-background-color: #fefffe;
+    -fx-border-radius: 7px;
+    -fx-padding: 3px;
+    -fx-background-radius: 7px;
+    -fx-text-fill: #009900;
+}
+
+
+.textPequeno{
+    -fx-font: 10px "Verdana";
+}
+
+.labelOS
+{
+    -fx-font: 16px "Century Gothic";
+    -fx-text-fill: black;
+}
+
+.Titulo
+{
+    -fx-text-fill: #6666ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    
+}
+
+.buttonIcon
+{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 3px;
+}
+
+.buttonIcon:hover
+{
+    -fx-background-color: #e6e6e6;
+}
+
+.buttonIcon:pressed
+{
+    -fx-background-color: #999999;
+}
+
+.TituloFormulario
+{
+    -fx-font: 16px "Century Gothic";
+    -fx-padding: 0px 0px 5px 0px;
+    -fx-border-style: solid inside;
+    -fx-border-width: 0px 0px 0.1px 0px;
+    -fx-border-color: black;
+}
+
+.LabelTitulo
+{
+    -fx-font: 28px "Century Gothic";
+    -fx-text-fill: #8ec6e5;
+    
+}
+
+.hboxEncabezado
+{
+    -fx-border-width: 0 0 0.3 0;
+    -fx-border-color: #999999;
+}
+
+.toolTip
+{
+    -fx-font: 12px "Verdana";
+    -fx-text-fill: #333333;    
+}

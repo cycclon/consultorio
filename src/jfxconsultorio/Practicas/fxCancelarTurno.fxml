@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Practicas.ctrlCancelarTurno">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+         <children>
+            <GridPane hgap="10.0" vgap="5.0">
+               <children>
+                  <Label text="Trabajo:" />
+                  <Label text="Paciente:" GridPane.rowIndex="1" />
+                  <Label text="Día:" GridPane.rowIndex="2" />
+                  <Label text="Hora:" GridPane.rowIndex="3" />
+                  <Label fx:id="lblTrabajo" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre de la práctica a realizarce" />
+                     </tooltip></Label>
+                  <Label fx:id="lblPaciente" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <tooltip>
+                        <Tooltip  text="Nombre completo del paciente" />
+                     </tooltip></Label>
+                  <Label fx:id="lblDia" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip  text="Día programado para este trabajo" />
+                     </tooltip></Label>
+                  <Label fx:id="lblHorario" styleClass="LabelResaltado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <tooltip>
+                        <Tooltip  text="Horario programado para este trabajo" />
+                     </tooltip></Label>
+                  <Label text="Motivo de cancelación:" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtMotivo" prefWidth="400.0" promptText="Motivo" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip  text="Ingrese en este campo el motivo de la cancelación" />
+                     </tooltip></TextField>
+                  <ListView fx:id="lstMotivos" onMouseClicked="#lstMotivos_SeletedItemChanged" prefHeight="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <tooltip>
+                        <Tooltip  text="Lista de motivos registrados anteriormente&#10;Seleccione un motivo de la lista para reutilizarlo" />
+                     </tooltip></ListView>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308">
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnCancelar_Click" text="Cancelar Turno">
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para cancelar este turno" />
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/Cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

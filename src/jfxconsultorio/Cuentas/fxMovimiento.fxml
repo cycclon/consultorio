@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Cuentas.ctrlMovimiento">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="30.0" spacing="5.0" styleClass="hboxEncabezado" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblFecha" text="Label">
+               <tooltip>
+                  <Tooltip text="Fecha en la que se realizó el movimiento" />
+               </tooltip></Label>
+            <ImageView fx:id="ivIcono" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lblConcepto" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" styleClass="labelOS" text="Label">
+               <tooltip>
+                  <Tooltip fx:id="ttConcepto" text="Empty Tooltip" />
+               </tooltip>
+            </Label>
+            <Label fx:id="lblMonto" styleClass="LabelResaltado" text="Label">
+               <tooltip>
+                  <Tooltip text="Monto del movimiento" />
+               </tooltip></Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

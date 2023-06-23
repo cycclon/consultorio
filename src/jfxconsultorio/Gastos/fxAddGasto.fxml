@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfxconsultorio.Gastos.ctrlAddGasto">
+   <stylesheets>
+      <URL value="@../Estilos/fxlogin.css" />
+      <URL value="@../Estilos/fxObraSocial.css" />
+   </stylesheets>
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <GridPane hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Fecha (primera/única ocurrencia):" />
+                  <DatePicker fx:id="dpFechaGasto" prefWidth="120.0" promptText="Seleccionar" GridPane.columnIndex="1">
+                     <tooltip>
+                        <Tooltip text="Seleccione la fecha de primera o única ocurrencia de este gasto" />
+                     </tooltip></DatePicker>
+                  <Label text="Monto:" GridPane.rowIndex="1" />
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="LabelParentesis" text="\$" />
+                        <TextField fx:id="txtMonto" prefWidth="75.0" promptText="0,00">
+                           <tooltip>
+                              <Tooltip text="Ingrese el monto del gasto. Ej: 15,50" />
+                           </tooltip></TextField>
+                     </children>
+                  </HBox>
+                  <Label text="Concepto:" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtConcepto" prefWidth="250.0" promptText="Concepto del gasto" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip text="Ingrese en este campo el concepto del gasto" />
+                     </tooltip></TextField>
+                  <Label text="Asignación:" GridPane.rowIndex="3" />
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <ListView fx:id="lstAsignaciones" prefHeight="100.0" prefWidth="250.0">
+                           <tooltip>
+                              <Tooltip  text="Lista de asignaciones a centro de costos" />
+                           </tooltip></ListView>
+                        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                           <children>
+                              <Label fx:id="lblEstadoAsignaciones" alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="LabelResaltado" text="Label" HBox.hgrow="ALWAYS">
+                                 <tooltip>
+                                    <Tooltip  text="Porcentaje asignado a centros de costo. Para poder registrar el gasto, debe llegar a 100%" />
+                                 </tooltip></Label>
+                              <Button mnemonicParsing="false" onAction="#btnQuitarAsignacion" text="Quitar seleccionada">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Imagenes/Iconos/remove.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip  text="Presione este botón para quitar la asignación seleccionada de la lista de arriba" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Label text="Programación:" GridPane.rowIndex="5" />
+                  <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <ComboBox fx:id="cbFrecuencia" maxWidth="1.7976931348623157E308" promptText="-- Frecuencia --">
+                           <tooltip>
+                              <Tooltip  text="Seleccione una frecuencia para este gasto. &#10;Si es un gasto eventual seleccione: Único" />
+                           </tooltip></ComboBox>
+                     </children>
+                  </HBox>
+                  <Label text="Agregar asignación:" GridPane.rowIndex="4" />
+                  <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <ComboBox fx:id="cbCC" maxWidth="1.7976931348623157E308" promptText="-- Centro de costos --">
+                           <tooltip>
+                              <Tooltip text="Seleccione un centro de costos al que el gasto será asignado" />
+                           </tooltip></ComboBox>
+                        <TextField fx:id="txtPorcentaje" prefWidth="50.0" promptText="\%">
+                           <tooltip>
+                              <Tooltip  text="Ingrese en este campo el porcentaje asignado al centro&#10;de costos seleccionado a la izquierda." />
+                           </tooltip></TextField>
+                        <Label styleClass="LabelParentesis" text="\%" />
+                        <Button mnemonicParsing="false" onAction="#btnAgregarAsignacion" text="Agregar">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Iconos/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Presione este botón para agregar una nueva asignación" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#btnRegistrar_Click" text="Registrar Gasto">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/Iconos/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip  text="Presione este botón para registrar el nuevo gasto" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
